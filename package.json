@@ -13,6 +13,8 @@
     "@astrojs/react": "^4.4.0",
     "@react-three/drei": "^9.122.0",
     "@react-three/fiber": "^8.18.0",
+    "@rerun-io/web-viewer": "^0.29.0",
+    "@rerun-io/web-viewer-react": "^0.29.0",
     "@types/three": "^0.182.0",
     "astro": "^5.16.0",
     "react": "^18.3.0",
