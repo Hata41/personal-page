@@ -1,4 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Global styles for the academic website */
+
 
 :root {
   --primary-color: #2c3e50;
