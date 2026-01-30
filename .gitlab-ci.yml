@@ -11,6 +11,8 @@ pages:
     - npm install
     # Build the static site into the `dist/` directory
     - npm run build
+    # Clean any existing public directory
+    - rm -rf public
     # GitLab Pages serves files from a folder named `public`
     - mv dist public
   artifacts:
