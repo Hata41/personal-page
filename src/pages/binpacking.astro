@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BinPacking3D from '../components/BinPacking3D';
+
+const demoItems = [
+  { id: '1', w: 2, h: 2, d: 2 },
+  { id: '2', w: 1, h: 1, d: 1 },
+  { id: '3', w: 3, h: 2, d: 1 },
+  { id: '4', w: 2, h: 3, d: 2 },
+  { id: '5', w: 4, h: 1, d: 2 },
+  { id: '6', w: 2, h: 2, d: 2 },
+  { id: '7', w: 1, h: 4, d: 1 },
+  { id: '8', w: 2, h: 1, d: 3 },
+  { id: '9', w: 5, h: 2, d: 1 },
+  { id: '10', w: 2, h: 2, d: 2 },
+  { id: '11', w: 2, h: 1, d: 1 },
+  { id: '12', w: 1, h: 2, d: 1 },
+  { id: '13', w: 3, h: 3, d: 3 }, // Large item
+  { id: '14', w: 2, h: 1, d: 1 },
+  { id: '15', w: 1, h: 1, d: 1 },
+];
+
+const binSize: [number, number, number] = [10, 6, 4];
+---
+
+<BaseLayout title="3D Bin Packing Demo">
+  <main class="container">
+    <h1>3D Bin Packing Visualization</h1>
+    
+    <p>
+      This is a <strong>local-only demo</strong> of a 3D bin packing visualization. 
+      It uses a simple shelf-packing heuristic to place items in a container.
+    </p>
+
+    <div class="card">
+      <BinPacking3D client:only="react" binSize={binSize} items={demoItems} />
+    </div>
+
+    <section class="explanation">
+      <h2>How it works</h2>
+      <p>
+        The items are placed one by one inside a 10x6x4 bin. The algorithm follows these steps:
+      </p>
+      <ul>
+        <li>Fill along the X-axis (width).</li>
+        <li>If an item doesn't fit in the current row, it starts a new row along the Y-axis (height).</li>
+        <li>If a row doesn't fit in the current layer, it starts a new layer along the Z-axis (depth).</li>
+        <li>If an item doesn't fit in the bin at all, it is skipped.</li>
+      </ul>
+      <p>
+        <em>Note: This visualization is for demonstration purposes and does not represent an optimal packing solution.</em>
+      </p>
+    </section>
+
+    <style>
+      .container {
+        padding: 2rem 0;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .card {
+        margin: 2rem 0;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        border-radius: 12px;
+        background: #fff;
+      }
+      .explanation {
+        margin-top: 2rem;
+        line-height: 1.6;
+      }
+      h1 {
+        margin-bottom: 0.5rem;
+      }
+    </style>
+  </main>
+</BaseLayout>
