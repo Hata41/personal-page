@@ -1,0 +1,17 @@
+{
+  "talks": [
+    {
+      "title": "Introduction to Elliptic Curves",
+      "event": "Seminar at Your Lab",
+      "location": "City, Country",
+      "date": "2024-05-15",
+      "url": "https://example.com/talk1"
+    },
+    {
+      "title": "Recent Advances in Number Theory",
+      "event": "Conference Name",
+      "location": "Another City",
+      "date": "2023-10-20"
+    }
+  ]
+}

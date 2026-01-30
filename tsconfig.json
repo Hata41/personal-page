@@ -1,0 +1,30 @@
+{
+  // Extend Astro’s recommended base configuration.  You can choose
+  // "strict" or "strictest" instead of "base" if you prefer stricter
+  // TypeScript settings.
+  "extends": "astro/tsconfigs/base",
+  "compilerOptions": {
+    // Enable React JSX transform.  Astro uses Vite under the hood, so
+    // these settings inform the TypeScript compiler how to handle JSX.
+    "jsx": "preserve",
+    "jsxImportSource": "react",
+    // Enforce stricter type checking.  Feel free to adjust to your
+    // preference (e.g. remove or set to false for a more lenient setup).
+    "strict": true,
+    // Enable import alias resolution if you define aliases later.
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@pages/*": ["src/pages/*"]
+    }
+  },
+  "include": [
+    ".astro/types.d.ts",
+    "src/**/*",
+    "astro.config.mjs"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

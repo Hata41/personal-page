@@ -1,0 +1,17 @@
+{
+  "teaching": [
+    {
+      "course": "Algebraic Geometry",
+      "institution": "Your University",
+      "year": 2024,
+      "level": "Graduate",
+      "url": "https://example.com/course1"
+    },
+    {
+      "course": "Introduction to Number Theory",
+      "institution": "Your University",
+      "year": 2023,
+      "level": "Undergraduate"
+    }
+  ]
+}

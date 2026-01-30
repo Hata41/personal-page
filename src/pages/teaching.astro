@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+
+const data = await getEntry('teaching', 'teaching');
+const teaching = data.data.teaching;
+---
+
+<BaseLayout title="Teaching" description="Teaching activities of Sebastian Reboul">
+  <h1>Teaching</h1>
+
+  <ul>
+    {teaching.map(course => (
+      <li>
+        <strong>{course.course}</strong><br />
+        {course.institution}, {course.year} ({course.level})<br />
+        {course.url && <a href={course.url}>Link</a>}
+      </li>
+    ))}
+  </ul>
+</BaseLayout>

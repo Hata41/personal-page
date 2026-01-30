@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getEntry } from 'astro:content';
+
+const profile = await getEntry('profile', 'profile');
+---
+
+<BaseLayout title="Sebastian Reboul - Home" description={profile.data.bio}>
+  <h1>Welcome</h1>
+  <p>{profile.data.bio}</p>
+  <h2>Research Interests</h2>
+  <ul>
+    {profile.data.researchKeywords.map(keyword => <li>{keyword}</li>)}
+  </ul>
+  <h2>Quick Links</h2>
+  <ul>
+    {Object.entries(profile.data.links).map(([key, value]) => <li><a href={value}>{key}</a></li>)}
+  </ul>
+</BaseLayout>
