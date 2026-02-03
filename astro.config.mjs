@@ -1,12 +1,16 @@
-import { defineConfig } from 'astro/config';
-import react from '@astrojs/react';
-import mdx from '@astrojs/mdx';
-import tailwind from '@astrojs/tailwind';
+// @ts-check
+import { defineConfig } from "astro/config";
+
+import react from "@astrojs/react";
+import tailwind from "@astrojs/tailwind";
+
+import { template } from "./src/settings";
+
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  // Register the React and MDX integrations.
-  site: 'https://Hata41.github.io',
-  base: '/personal-page',
-  integrations: [react(), mdx(), tailwind()],
+    integrations: [react(), tailwind(), sitemap()],
+    site: import.meta.env.PROD ? 'https://Hata41.github.io' : undefined,
+    base: import.meta.env.PROD ? '/personal-page' : '',
 });

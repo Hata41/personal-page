@@ -1,124 +1,106 @@
-# Personal Doctorate Website – Astro + React
+# Astro Academia Documentation
 
-This repository contains a skeleton of a personal academic website built with [Astro](https://astro.build/) and React. It is designed for researchers who wish to host their site on **GitHub Pages**. The site uses Astro’s static site generator capabilities while allowing React components to be sprinkled into Markdown/MDX.
+## What is Astro Academia?
 
-## Purpose
+Astro Academia is a personal academic website built using Astro, a modern static site generator. The website is designed to showcase academic achievements, research papers, blog posts, and a CV. It is fast, responsive, and easy to maintain, making it an ideal platform for academics and researchers to present their work.
 
-- Provide a simple, maintainable starting point for a personal site (CV, publications, talks, blog, etc.).
-- Use Markdown/MDX for content while keeping the site static and easy to host.
-- Include React components only where interactivity is needed, without requiring a Node.js backend.
-- Generate static assets that can be deployed on GitHub Pages using GitHub Actions
+If you find Astro Academia useful or appreciate my work, consider supporting me! Your support helps keep this project maintained and encourages further development. 🚀✨
 
-## Repository structure
+<a href="https://buymeacoffee.com/maiobarbero" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-yellow.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+<a href="https://www.producthunt.com/products/astro-academia?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-astro&#0045;academia" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1026976&theme=light&t=1760776422941" alt="Astro&#0032;Academia - Academic&#0032;website&#0032;template | Product Hunt" style="width: 189px; height: 41px;" width="189" height="41" /></a>
 
+### Demo
+You can see Astro Academia at the following link: <a href="https://maiobarbero.github.io/astro_academia/" target="_blank">demo page</a>
+
+## How to use it
+
+Fork this repository to create your new website starting from this template.
+
+## How to Create a CV Using the `cv.ts` File
+
+The `cv.ts` file located in the `src/data/` directory is used to define the structure and content of your CV. This file exports an object containing various sections of your CV, such as education, experience, publications, and more.
+
+### Example Structure of `cv.ts`
+
+```typescript
+export const cv = {
+  education: [
+    {
+      degree: "Ph.D. in Computer Science",
+      institution: "University of Example",
+      year: "2020",
+    },
+    {
+      degree: "M.Sc. in Computer Science",
+      institution: "University of Example",
+      year: "2016",
+    },
+  ],
+  experience: [
+    {
+      title: "Research Scientist",
+      company: "Example Research Lab",
+      year: "2021-Present",
+    },
+    {
+      title: "Software Engineer",
+      company: "Tech Company",
+      year: "2016-2021",
+    },
+  ],
+  // Add more sections as needed
+};
 ```
-personal-page/
-│
-├── package.json        # Project metadata and dependencies
-├── tsconfig.json       # TypeScript compiler configuration (extends Astro’s base config)
-├── astro.config.mjs    # Astro configuration enabling React and MDX
-├── .github/workflows/deploy.yml # GitHub Actions workflow to build and publish the site
-├── README.md           # Overview of the project (this file)
-├── .gitignore          # Files and folders ignored by Git
-│
-├── public/             # Static assets (copied directly to the final site)
-│
-├── src/
-│   ├── content/        # Structured data files (JSON) for publications, talks, etc.
-│   │   ├── config.ts   # Content collections configuration
-│   │   ├── profile/    # Profile information
-│   │   ├── publications/ # Publications data
-│   │   ├── talks/      # Talks data
-│   │   └── teaching/   # Teaching data
-│   │
-│   ├── layouts/        # Astro layouts for consistent structure
-│   │   └── BaseLayout.astro # Main layout with navbar and footer
-│   │
-│   ├── pages/          # Website pages (Astro, Markdown, MDX)
-│   │   ├── index.astro # Home page
-│   │   ├── research.mdx # Research overview
-│   │   ├── publications.astro # Publications with filter
-│   │   ├── talks.astro # Talks list
-│   │   ├── teaching.astro # Teaching list
-│   │   ├── cv.mdx      # CV page
-│   │   ├── contact.astro # Contact info
-│   │   ├── legal.mdx   # Legal notice
-│   │   └── about.mdx   # About page (example)
-│   │
-│   └── components/     # React components (TypeScript)
-│       ├── Counter.tsx # Example counter
-│       ├── CopyEmailButton.tsx # Copy email to clipboard
-│       └── PublicationFilter.tsx # Filter publications
-│
-└── dist/               # Generated output after running `npm run build` (ignored)
+
+To create or update your CV, modify the `cv.ts` file with your personal information and achievements. The CV will be automatically rendered on the CV page of your website.
+
+## How to Use the `settings.ts` File
+
+The `settings.ts` file located in the `src/` directory is used to configure various settings for your Astro Academia website. This file exports an object containing settings such as site title, description, social media links, and more.
+
+### Example Structure of `settings.ts`
+
+```typescript
+export const settings = {
+  siteTitle: "Astro Academia",
+  siteDescription: "A personal academic website built with Astro.",
+  socialLinks: {
+    twitter: "https://twitter.com/yourusername",
+    github: "https://github.com/yourusername",
+    linkedin: "https://linkedin.com/in/yourusername",
+  },
+  // Add more settings as needed
+};
 ```
 
-## Usage
+To customize your website settings, modify the `settings.ts` file with your desired values. These settings will be used throughout your website to display the appropriate information.
 
-1. **Install dependencies**
+## Where to Find the Blog Collection and Where to Add New Blog Posts
 
-   ```bash
-   npm install
-   ```
+The blog collection is located in the `src/content/BlogPosts/` directory. Each blog post is a Markdown file with a `.md` extension. The blog posts are named sequentially (e.g., `post1.md`, `post2.md`, etc.).
 
-   This downloads the packages listed in `package.json` (Astro, React, etc.) into the `node_modules` folder (which is ignored from version control).
+### Adding a New Blog Post
 
-2. **Develop locally**
+1. Navigate to the `src/content/BlogPosts/` directory.
+2. Create a new Markdown file for your blog post (e.g., `post1.md`).
+3. Add the content of your blog post using Markdown syntax. Include frontmatter at the top of the file to define metadata such as title, date, and tags.
 
-   ```bash
-   npm run dev
-   ```
+### Example Blog Post (`post11.md`)
 
-   This starts a local development server on <http://localhost:4321> (the port may vary).  You can edit files in `src/pages` and `src/components` and see changes live.
+```markdown
+---
+title: "New Blog Post"
+date: "2023-10-01"
+tags: ["research", "astro"]
+excerpt: "Some short paragraphs"
+---
 
-3. **Build for production**
+# New Blog Post
 
-   ```bash
-   npm run build
-   ```
+This is the content of the new blog post. Write your article here using Markdown syntax.
+```
 
-   The built static site will be output to the `dist/` directory.  The `dist` folder contains plain HTML, CSS and JavaScript files ready to be served by a static web server.
+Once you have added the new blog post, it will be automatically included in the blog collection and displayed on the blog page of your website.
 
-## Deploy to GitHub Pages
-
-This project is configured to deploy automatically to GitHub Pages using GitHub Actions.
-
-1. **Push to GitHub**: Commit your changes and push them to the `main` branch of your GitHub repository.
-2. **Enable GitHub Actions**: 
-   - Go to your repository on GitHub.
-   - Navigate to **Settings > Pages**.
-   - Under **Build and deployment > Source**, select **GitHub Actions**.
-3. **Automatic Deployment**: The workflow in `.github/workflows/deploy.yml` will trigger on every push to `main`, building the site and deploying it to `https://Hata41.github.io/personal-page/`.
-
-## Editing Content
-
-### Structured Data
-
-The site uses JSON files in `src/content/` for structured data that can be easily edited:
-
-- `src/content/profile/profile.json`: Personal information, bio, links, etc.
-- `src/content/publications/publications.json`: List of publications.
-- `src/content/talks/talks.json`: List of talks.
-- `src/content/teaching/teaching.json`: List of teaching activities.
-
-Edit these JSON files to update your information. The schema is defined in `src/content/config.ts`.
-
-### Pages
-
-- Static pages are in `src/pages/` as `.astro` or `.mdx` files.
-- Use MDX for pages that need Markdown formatting.
-- React components can be embedded in MDX with `client:load`.
-
-### Styling
-
-Global styles are in `src/styles/global.css`. Edit this file for site-wide styling.
-
-- This repository intentionally does not include the `node_modules` directory.  Dependencies are resolved via `npm install`.
-- The example pages are intentionally simple.  Feel free to add additional `.astro`, `.md`, or `.mdx` pages, new React components in `src/components`, and static assets in `public/`.
-- If you plan to embed React inside Markdown, ensure that you are using MDX (`.mdx` files) and see `astro.config.mjs` for the MDX integration.
-
-## TypeScript usage
-
-This project is configured to use **TypeScript**.  All React components are written as `.tsx` files and the project includes a `tsconfig.json` that extends Astro’s base configuration.  You can write TypeScript in your components and pages to benefit from static type checking and editor autocompletion.  The compiler options in `tsconfig.json` enable strict type checking and set up JSX to work with React.  If you prefer a more relaxed configuration, adjust the options accordingly.
-
-Enjoy building your personal academic site! If you are an LLM agent charged with editing this repository, please refer to the project structure and Astro documentation for guidance.
+## Deploy
+The template provides a workflow to deploy the website on Github pages as a static website.

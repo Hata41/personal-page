@@ -1,91 +1,13 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import Layout from '../layouts/Layout.astro';
 import RerunViewer3D from '../components/RerunViewer3D';
-
 ---
-
-<BaseLayout title="Interactive 3D Simulation Demos">
-  <main class="py-12 bg-slate-50 min-h-screen">
-    <div class="container mx-auto px-4 max-w-6xl">
-      <!-- Page Header -->
-      <div class="mb-12 border-b border-slate-200 pb-8 text-center md:text-left">
-        <h1 class="text-5xl font-black text-slate-900 tracking-tight mb-4">
-          Simulation Viewports
-        </h1>
-        <p class="text-xl text-slate-600 max-w-3xl">
-          Exploring the intersection of geometric optimization and high-performance visualization. 
-          Below is a demonstration platform built with React, Three.js, and Rerun.
-        </p>
-      </div>
-
-      <!-- Navigation Jump Links -->
-      <div class="flex gap-4 mb-12 overflow-x-auto pb-2 scrollbar-none">
-        <a href="#rerun-viewer" class="px-6 py-2 bg-white rounded-full border border-slate-200 shadow-sm text-sm font-bold text-slate-700 hover:border-purple-500 hover:text-purple-600 transition-all whitespace-nowrap">
-          🔭 Rerun Global Viewer
-        </a>
-      </div>
-      <!-- Demo Section 2: Rerun Viewer -->
-      <section id="rerun-viewer" class="mb-24 scroll-mt-20">
-        <div class="flex items-center gap-3 mb-6">
-          <div class="p-2 bg-purple-100 rounded-lg text-purple-600">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-            </svg>
-          </div>
-          <h2 class="text-3xl font-bold text-slate-800">Rerun 3D Global Viewer</h2>
-        </div>
-
-        <div class="bg-slate-900 rounded-3xl shadow-2xl overflow-hidden border border-slate-700 mb-8 aspect-video">
-          <RerunViewer3D client:only="react" />
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="p-5 border border-slate-200 rounded-2xl bg-white shadow-sm">
-            <span class="text-[10px] font-bold text-purple-600 uppercase tracking-widest block mb-2">Performance</span>
-            <h4 class="font-bold mb-1">Rust-Powered WASM</h4>
-            <p class="text-xs text-slate-500">Utilizing a direct RRD stream, the viewer offloads heavy 3D rendering to WebAssembly for native-level speed.</p>
-          </div>
-          <div class="p-5 border border-slate-200 rounded-2xl bg-white shadow-sm">
-            <span class="text-[10px] font-bold text-purple-600 uppercase tracking-widest block mb-2">Temporal Control</span>
-            <h4 class="font-bold mb-1">Time-Series History</h4>
-            <p class="text-xs text-slate-500">Scrub through simulation history with microsecond precision to analyze edge cases and system transitions.</p>
-          </div>
-          <div class="p-5 border border-slate-200 rounded-2xl bg-white shadow-sm">
-            <span class="text-[10px] font-bold text-purple-600 uppercase tracking-widest block mb-2">Structure</span>
-            <h4 class="font-bold mb-1">Linear Layout</h4>
-            <p class="text-xs text-slate-500">Configured to hide the welcome screen and focus directly on the loaded `.rrd` recording from our compute backend.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Footer Callout -->
-      <div class="bg-slate-900 rounded-3xl p-12 text-center text-white relative overflow-hidden">
-        <div class="absolute inset-0 bg-blue-600 opacity-10 blur-3xl rounded-full -translate-x-1/2 -translate-y-1/2 h-full w-full"></div>
-        <h3 class="text-2xl font-bold mb-4 relative z-10">Interested in the source code?</h3>
-        <p class="text-slate-400 mb-8 max-w-xl mx-auto relative z-10">
-          These tools are part of an open research initiative exploring automated palletization and spatial reasoning.
-        </p>
-        <a href="https://github.com" class="inline-flex items-center gap-2 px-8 py-3 bg-white text-slate-900 rounded-full font-bold hover:bg-slate-100 transition-colors relative z-10">
-          View Repository
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
-        </a>
-      </div>
-    </div>
-  </main>
-</BaseLayout>
-
-<style>
-  html {
-    scroll-behavior: smooth;
-  }
-  .scrollbar-none::-webkit-scrollbar {
-    display: none;
-  }
-  .scrollbar-none {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-</style>
+<Layout title="3D Demos">
+  <div class="prose max-w-none mb-8 p-8">
+    <h1>3D Visualization</h1>
+    <p>Interactive 3D viewer powered by Rerun.</p>
+  </div>
+  <div class="h-[80vh] w-full border-t border-base-300">
+    <RerunViewer3D client:only="react" />
+  </div>
+</Layout>
