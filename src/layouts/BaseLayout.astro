@@ -5,6 +5,7 @@ export interface Props {
 }
 
 const { title, description = "Academic website of Sebastian Reboul, PhD student in Mathematics" } = Astro.props;
+const base = import.meta.env.BASE_URL;
 ---
 
 <!DOCTYPE html>
@@ -23,15 +24,15 @@ const { title, description = "Academic website of Sebastian Reboul, PhD student 
   <body>
     <nav class="navbar">
       <div class="container">
-        <a href="/">Sebastian Reboul</a>
+        <a href={base}>Sebastian Reboul</a>
         <div>
-          <a href="/research">Research</a>
-          <a href="/publications">Publications</a>
-          <a href="/talks">Talks</a>
-          <a href="/teaching">Teaching</a>
-          <a href="/cv">CV</a>
-          <a href="/demos">Demos</a>
-          <a href="/contact">Contact</a>
+          <a href={`${base}research`}>Research</a>
+          <a href={`${base}publications`}>Publications</a>
+          <a href={`${base}talks`}>Talks</a>
+          <a href={`${base}teaching`}>Teaching</a>
+          <a href={`${base}cv`}>CV</a>
+          <a href={`${base}demos`}>Demos</a>
+          <a href={`${base}contact`}>Contact</a>
         </div>
       </div>
     </nav>
@@ -44,7 +45,7 @@ const { title, description = "Academic website of Sebastian Reboul, PhD student 
 
     <footer class="footer">
       <div class="container">
-        <p>&copy; {new Date().getFullYear()} Sebastian Reboul. <a href="/legal">Legal Notice</a></p>
+        <p>&copy; {new Date().getFullYear()} Sebastian Reboul. <a href={`${base}legal`}>Legal Notice</a></p>
       </div>
     </footer>
   </body>
