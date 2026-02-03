@@ -1,5 +1,0 @@
-
-User-agent: *
-Allow: /
-
-Sitemap: https://hata41.github.io/personal-page/sitemap-index.xml
