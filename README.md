@@ -7,7 +7,7 @@ This repository contains a skeleton of a personal academic website built with [A
 - Provide a simple, maintainable starting point for a personal site (CV, publications, talks, blog, etc.).
 - Use Markdown/MDX for content while keeping the site static and easy to host.
 - Include React components only where interactivity is needed, without requiring a Node.js backend.
-- Generate static assets that can be deployed on GitHub Pages using GitHub Actions.
+- Generate static assets that can be deployed on GitHub Pages using GitHub Actions
 
 ## Repository structure
 
