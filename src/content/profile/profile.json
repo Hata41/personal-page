@@ -1,16 +1,19 @@
 {
   "name": "Sebastian Reboul",
-  "title": "PhD Student in Mathematics",
-  "affiliation": "CNRS - Your Lab",
-  "advisor": "Advisor Name",
-  "email": "sebastian.reboul@example.com",
-  "phone": "",
-  "address": "Your Institution Address, City, Country",
-  "bio": "I am a PhD student in Mathematics at CNRS, working on topics in pure mathematics. My research focuses on algebraic geometry and number theory.",
-  "researchKeywords": ["Algebraic Geometry", "Number Theory", "Arithmetic"],
+  "title": "PhD Student in Mathematics & Computer Science",
+  "affiliation": "Wiremind Cargo / Télécom SudParis",
+  "advisor": "Randal Douc",
+  "email": "sebastian.reboul@gmail.com",
+  "address": "Paris, France",
+  "bio": "I am a CIFRE PhD student at Wiremind Cargo and Télécom SudParis, conducting research on Reinforcement Learning applied to Combinatorial Optimization, specifically the 3D Bin Packing Problem. I hold a Double Master in Mathematics and Computer Science from Sorbonne University.",
+  "researchKeywords": [
+    "Reinforcement Learning",
+    "Combinatorial Optimization",
+    "3D Bin Packing",
+    "Safe RL",
+    "Invalid Action Masking"
+  ],
   "links": {
-    "GitHub": "https://github.com/yourusername",
-    "LinkedIn": "https://linkedin.com/in/yourprofile",
-    "ORCID": "https://orcid.org/your-orcid"
+    "Email": "mailto:sebastian.reboul@gmail.com"
   }
 }

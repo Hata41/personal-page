@@ -1,20 +1,12 @@
 {
   "publications": [
     {
-      "title": "On the Arithmetic of Elliptic Curves",
-      "authors": ["Sebastian Reboul", "Advisor Name"],
-      "venue": "Journal of Number Theory",
+      "title": "Learning Upper Lower Value Envelopes to Shape Online RL: A Principled Approach",
+      "authors": ["Sebastian Reboul", "Hélène Halconruy", "Randal Douc"],
+      "venue": "arXiv",
       "year": 2025,
-      "doi": "10.1000/example",
-      "url": "https://example.com/paper1",
-      "keywords": ["Elliptic Curves", "Arithmetic"]
-    },
-    {
-      "title": "Modular Forms and Galois Representations",
-      "authors": ["Sebastian Reboul"],
-      "venue": "Proceedings of Conference",
-      "year": 2024,
-      "keywords": ["Modular Forms", "Galois"]
+      "url": "https://www.arxiv.org/abs/2510.19528",
+      "keywords": ["Online RL", "Value Envelopes", "Regret Bounds", "Machine Learning"]
     }
   ]
 }

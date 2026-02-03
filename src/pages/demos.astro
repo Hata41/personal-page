@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AdvancedPackingDemo from '../components/packing_simulator/AdvancedPackingDemo';
 import RerunViewer3D from '../components/RerunViewer3D';
 
 ---
@@ -15,58 +14,16 @@ import RerunViewer3D from '../components/RerunViewer3D';
         </h1>
         <p class="text-xl text-slate-600 max-w-3xl">
           Exploring the intersection of geometric optimization and high-performance visualization. 
-          Below are two distinct demonstration platforms built with React, Three.js, and Rerun.
+          Below is a demonstration platform built with React, Three.js, and Rerun.
         </p>
       </div>
 
       <!-- Navigation Jump Links -->
       <div class="flex gap-4 mb-12 overflow-x-auto pb-2 scrollbar-none">
-        <a href="#bin-packing" class="px-6 py-2 bg-white rounded-full border border-slate-200 shadow-sm text-sm font-bold text-slate-700 hover:border-blue-500 hover:text-blue-600 transition-all whitespace-nowrap">
-          📦 3D Bin Packing
-        </a>
         <a href="#rerun-viewer" class="px-6 py-2 bg-white rounded-full border border-slate-200 shadow-sm text-sm font-bold text-slate-700 hover:border-purple-500 hover:text-purple-600 transition-all whitespace-nowrap">
           🔭 Rerun Global Viewer
         </a>
       </div>
-      
-      <!-- Demo Section 1: Bin Packing -->
-      <section id="bin-packing" class="mb-24 scroll-mt-20">
-        <div class="flex items-center gap-3 mb-6">
-          <div class="p-2 bg-blue-100 rounded-lg text-blue-600">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-            </svg>
-          </div>
-          <h2 class="text-3xl font-bold text-slate-800">Advanced 3D Bin Packing Simulator</h2>
-        </div>
-
-        <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100 mb-8 transition-shadow hover:shadow-blue-900/10">
-          <AdvancedPackingDemo client:only="react" />
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="bg-blue-50/50 p-6 rounded-2xl border border-blue-100">
-            <h3 class="text-lg font-bold text-blue-900 mb-3 lowercase tracking-tight">/ Empty Maximal Space Logic</h3>
-            <p class="text-sm text-blue-800/80 leading-relaxed">
-              Implemented using a recursive EMS splitting algorithm. This approach enables the simulator to maintain 
-              a full topological understanding of available voids, represented as overlapping maximal rectangles. 
-              The system prioritizes stability and volume utilization through heuristic scoring.
-            </p>
-          </div>
-          <div class="bg-emerald-50/50 p-6 rounded-2xl border border-emerald-100">
-            <h3 class="text-lg font-bold text-emerald-900 mb-3 lowercase tracking-tight">/ Simulated Annealing</h3>
-            <p class="text-sm text-emerald-800/80 leading-relaxed">
-              Supporting global optimization via a stochastic search process. The engine iteratively refines 
-              item sequences and candidate rotations, accepting "worse" solutions early on to escape local 
-              minima—eventually converging on high-density packing configurations.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Divider -->
-      <div class="h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent mb-24"></div>
-
       <!-- Demo Section 2: Rerun Viewer -->
       <section id="rerun-viewer" class="mb-24 scroll-mt-20">
         <div class="flex items-center gap-3 mb-6">
