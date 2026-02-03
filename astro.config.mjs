@@ -12,5 +12,5 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
     integrations: [react(), tailwind(), sitemap()],
     site: import.meta.env.PROD ? 'https://Hata41.github.io' : undefined,
-    base: import.meta.env.PROD ? '/personal-page' : '',
+    base: template.base,
 });

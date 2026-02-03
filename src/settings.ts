@@ -34,7 +34,7 @@ export const template = {
 	darkTheme: 'dark', // Select one of the Daisy UI Themes or create your own
 	excerptLength: 200,
 	postPerPage: 5,
-    base: import.meta.env.PROD ? '/personal-page' : '' // Repository name starting with /
+    base: import.meta.env.PROD ? '/personal-page' : '' // TODO: Replace '/personal-page' with your actual GitHub repository name (e.g., '/my-repo-name'). For user sites (username.github.io), set to ''.
 }
 
 export const seo = {
