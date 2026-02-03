@@ -15,10 +15,10 @@
  *    DO NOT use `@rerun-io/web-viewer-react` because it does not support the `base_url` 
  *    property in its props, which is required to correctly locate the WASM file.
  * 
- * 3. ABSOLUTE URLs ONLY:
- *    Always construct absolute URLs using `window.location.origin`.
+ * 3. ABSOLUTE URLs ONLY (INCLUDING BASE_URL):
+ *    Always construct absolute URLs using `window.location.origin` + `import.meta.env.BASE_URL`.
  *    - BAD:  baseUrl = "/"
- *    - GOOD: baseUrl = window.location.origin + "/"
+ *    - GOOD: baseUrl = window.location.origin + import.meta.env.BASE_URL
  *    Passing relative paths to `viewer.start()` will cause internal `Invalid URL` errors.
  * 
  * 4. ASTRO INTEGRATION:
@@ -50,8 +50,9 @@ export default function RerunViewer3D() {
     const startViewer = async () => {
       try {
         const origin = window.location.origin;
-        const rrdUrl = `${origin}/data/data.rrd`;
-        const baseUrl = `${origin}/`;
+        const base = import.meta.env.BASE_URL;
+        const rrdUrl = `${origin}${base}/data/data.rrd`.replace(/([^:])\/\//g, '$1/');
+        const baseUrl = `${origin}${base}/`.replace(/([^:])\/\//g, '$1/');
 
         await viewer.start(rrdUrl, containerRef.current, {
           width: "100%",

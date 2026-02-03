@@ -1,13 +1,13 @@
 # Personal Doctorate Website – Astro + React
 
-This repository contains a skeleton of a personal academic website built with [Astro](https://astro.build/) and React.  It is designed for doctorants in mathematics affiliated with the CNRS who wish to host their site on the CNRS **PLMlab Pages** service.  The site uses Astro’s static site generator capabilities while allowing React components to be sprinkled into Markdown/MDX.
+This repository contains a skeleton of a personal academic website built with [Astro](https://astro.build/) and React. It is designed for researchers who wish to host their site on **GitHub Pages**. The site uses Astro’s static site generator capabilities while allowing React components to be sprinkled into Markdown/MDX.
 
 ## Purpose
 
 - Provide a simple, maintainable starting point for a personal site (CV, publications, talks, blog, etc.).
 - Use Markdown/MDX for content while keeping the site static and easy to host.
 - Include React components only where interactivity is needed, without requiring a Node.js backend.
-- Generate static assets that can be deployed on the CNRS PLMlab Pages (or, if necessary, PLMshift) infrastructure.
+- Generate static assets that can be deployed on GitHub Pages using GitHub Actions.
 
 ## Repository structure
 
@@ -17,8 +17,7 @@ personal-page/
 ├── package.json        # Project metadata and dependencies
 ├── tsconfig.json       # TypeScript compiler configuration (extends Astro’s base config)
 ├── astro.config.mjs    # Astro configuration enabling React and MDX
-├── .gitlab-ci.yml      # GitLab CI pipeline to build and publish the site
-├── plm-hosting.md      # Guide on hosting this site on PLMlab Pages (CNRS)
+├── .github/workflows/deploy.yml # GitHub Actions workflow to build and publish the site
 ├── README.md           # Overview of the project (this file)
 ├── .gitignore          # Files and folders ignored by Git
 │
@@ -80,14 +79,16 @@ personal-page/
 
    The built static site will be output to the `dist/` directory.  The `dist` folder contains plain HTML, CSS and JavaScript files ready to be served by a static web server.
 
-4. **Deploy to PLMlab Pages (CNRS)**
+## Deploy to GitHub Pages
 
-   See the **`plm-hosting.md`** document in this repository for detailed instructions on deploying this site on the CNRS PLMlab Pages service.  In short, you will:
+This project is configured to deploy automatically to GitHub Pages using GitHub Actions.
 
-   - Create a new project on the PLMlab GitLab instance.
-   - Commit the contents of this repository to that project.
-   - Ensure that the `.gitlab-ci.yml` file is present; it instructs GitLab CI to install dependencies, build the site and publish the `public/` folder as a GitLab Pages site.
-   - Request a custom domain (e.g. `<login>.perso.math.cnrs.fr`) via your PLM contact once the site builds successfully.
+1. **Push to GitHub**: Commit your changes and push them to the `main` branch of your GitHub repository.
+2. **Enable GitHub Actions**: 
+   - Go to your repository on GitHub.
+   - Navigate to **Settings > Pages**.
+   - Under **Build and deployment > Source**, select **GitHub Actions**.
+3. **Automatic Deployment**: The workflow in `.github/workflows/deploy.yml` will trigger on every push to `main`, building the site and deploying it to `https://Hata41.github.io/personal-page/`.
 
 ## Editing Content
 
@@ -120,4 +121,4 @@ Global styles are in `src/styles/global.css`. Edit this file for site-wide styli
 
 This project is configured to use **TypeScript**.  All React components are written as `.tsx` files and the project includes a `tsconfig.json` that extends Astro’s base configuration.  You can write TypeScript in your components and pages to benefit from static type checking and editor autocompletion.  The compiler options in `tsconfig.json` enable strict type checking and set up JSX to work with React.  If you prefer a more relaxed configuration, adjust the options accordingly.
 
-Enjoy building your personal academic site!  If you are an LLM agent charged with editing this repository, please refer to the comments in `plm-hosting.md` for guidance on how to publish your changes on the CNRS infrastructure.
+Enjoy building your personal academic site! If you are an LLM agent charged with editing this repository, please refer to the project structure and Astro documentation for guidance.
