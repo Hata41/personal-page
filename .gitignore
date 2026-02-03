@@ -92,10 +92,6 @@ temp/
 # Astro specific
 .astro/
 
-# Data files that might be large or sensitive
-public/data/*.rrd
-*.rrd
-
 # Package Manager Extensions
 pnpm-debug.log*
 .pnpm-store
