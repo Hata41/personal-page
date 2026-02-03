@@ -95,3 +95,26 @@ temp/
 # Data files that might be large or sensitive
 public/data/*.rrd
 *.rrd
+
+# Package Manager Extensions
+pnpm-debug.log*
+.pnpm-store
+
+# TypeScript
+*.tsbuildinfo
+
+# AI & Context Dumps
+repomix-output.txt
+repopack-output.txt
+personalpage.txt
+
+# Testing & Deployment
+.vercel
+.netlify
+.wrangler
+test-results/
+
+# OS Metadata
+Desktop.ini
+.Spotlight-V100
+.Trashes
