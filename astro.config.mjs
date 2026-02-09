@@ -11,6 +11,6 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
     integrations: [react(), tailwind(), sitemap()],
-    site: import.meta.env.PROD ? 'https://Hata41.github.io' : undefined,
+    site: import.meta.env.PROD ? template.website_url : undefined,
     base: template.base,
 });
