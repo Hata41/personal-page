@@ -27,14 +27,14 @@ export const social = {
 }
 
 export const template = {
-	website_url: 'https://maiobarbero.github.io', // Astro needs to know your site’s deployed URL to generate a sitemap. It must start with http:// or https://
+	website_url: 'https://Hata41.github.io', // Astro needs to know your site’s deployed URL to generate a sitemap. It must start with http:// or https://
 	menu_left: false,
 	transitions: true,
 	lightTheme: 'light', // Select one of the Daisy UI Themes or create your own
 	darkTheme: 'dark', // Select one of the Daisy UI Themes or create your own
 	excerptLength: 200,
 	postPerPage: 5,
-    base: import.meta.env.PROD ? '/astro_academia' : '' // TODO: Replace '/personal-page' with your actual GitHub repository name (e.g., '/my-repo-name'). For user sites (username.github.io), set to ''.
+    base: import.meta.env.PROD ? '/personal-page' : ''
 }
 
 export const seo = {
