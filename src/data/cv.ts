@@ -1,42 +1,11 @@
-export const experiences = [
+export const education = [
 	{
-		company: 'Wiremind Cargo',
+		school: 'Wiremind Cargo (CIFRE), Télécom SudParis',
 		time: 'May 2024 – Present',
-		title: 'CIFRE PhD Student',
+		degree: 'PhD Student',
 		location: '',
 		description: 'Subject: Reinforcement Learning for Combinatorial Optimization (3D-Bin Packing).',
 	},
-	{
-		company: 'Wiremind Cargo',
-		time: 'May – Dec 2023',
-		title: 'Research Intern',
-		location: '',
-		description: '',
-	},
-	{
-		company: '',
-		time: '2019 – 2020',
-		title: 'Private Tutor',
-		location: '',
-		description: 'Mathematics and Physics for CPGE students.',
-	},
-	{
-		company: 'Your University',
-		time: '2024',
-		title: 'Teaching: Algebraic Geometry',
-		location: '',
-		description: 'Graduate level course.',
-	},
-	{
-		company: 'Your University',
-		time: '2023',
-		title: 'Teaching: Introduction to Number Theory',
-		location: '',
-		description: 'Undergraduate level course.',
-	},
-];
-
-export const education = [
 	{
 		school: 'Sorbonne University',
 		time: '2021–2023',
@@ -63,7 +32,7 @@ export const education = [
 export const skills = [
 	{
 		title: 'Programming',
-		description: 'Python (PyTorch, Pandas), C++, R, LaTeX.',
+		description: 'Reinfrocment learning algorithm implementation in pytohn and rust',
 	},
 	{
 		title: 'Languages',

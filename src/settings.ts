@@ -1,14 +1,12 @@
 export const profile = {
 	fullName: 'Sebastian Reboul',
-	title: 'PhD Student in Mathematics & Computer Science',
+	title: 'PhD Student in Mathematics',
 	institute: 'Wiremind Cargo / Télécom SudParis',
 	author_name: 'Sebastian Reboul', // Author name to be highlighted in the papers section
 	research_areas: [
 		{ title: 'Reinforcement Learning', description: '', field: 'Research' },
 		{ title: 'Combinatorial Optimization', description: '', field: 'Research' },
-		{ title: '3D Bin Packing', description: '', field: 'Research' },
-		{ title: 'Safe RL', description: '', field: 'Research' },
-		{ title: 'Invalid Action Masking', description: '', field: 'Research' },
+		{ title: 'Online Learning', description: '', field: 'Research' },
 	],
 }
 
@@ -16,7 +14,7 @@ export const profile = {
 export const social = {
 	email: 'sebastian.reboul@gmail.com',
 	linkedin: '',
-	x: 'https://www.x.com/',
+	x: '',
 	bluesky: '',
 	github: '',
 	gitlab: '',
