@@ -54,6 +54,14 @@ export const skills: Skill[] = [
 	},
 ];
 
+export const teaching: Skill[] = [
+	{
+		title: 'Teaching at Télécom SudParis',
+		description:
+			"I give this class: <a href='https://enseignements.telecom-sudparis.eu/fiche.php?m=23702&complete=' target='_blank' rel='noopener noreferrer' class='underline hover:text-blue-500'>course page</a>.",
+	},
+];
+
 export const publications: Publication[] = [
 	{
 		title: 'Learning Upper Lower Value Envelopes to Shape Online RL: A Principled Approach',
