@@ -1,13 +1,14 @@
 ---
 import Layout from '@/layouts/Layout.astro'
-import { education, skills, publications } from '../data/cv'
+import { education, experience, skills, publications } from '../data/cv'
 import CvTimeline from '@/components/ui/CvTimeline.astro'
 
-import type { Education, Publication } from '../types/cv'
+import type { Education, Experience, Publication } from '../types/cv'
 import List from '@/components/ui/List.astro'
 import PublicationsList from '@/components/ui/PublicationsList.astro'
 
 let orderedEducations: Education[] = []
+let orderedExperience: Experience[] = []
 let orderedPublications: Publication[] = []
 
 const orderElement = <T extends { time: string }>(a: T, b: T) => {
@@ -31,6 +32,12 @@ if (education.length > 0) {
 	})
 }
 
+if (experience.length > 0) {
+	orderedExperience = experience.sort((a, b) => {
+		return orderElement(a, b)
+	})
+}
+
 if (publications.length > 0) {
 	orderedPublications = publications.sort((a, b) => {
 		return orderElement(a, b)
@@ -46,6 +53,17 @@ if (publications.length > 0) {
 					Education
 				</h2>
 				<CvTimeline elements={orderedEducations} colored={true} />
+			</section>
+		)
+	}
+
+	{
+		orderedExperience.length > 0 && (
+			<section class='mb-12'>
+				<h2 class='text-2xl font-bold mb-6 border-b pb-2'>
+					Administrative Experience
+				</h2>
+				<CvTimeline elements={orderedExperience} colored={true} />
 			</section>
 		)
 	}
